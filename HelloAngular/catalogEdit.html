@@ -1,0 +1,8 @@
+<div class="alert-success">
+    <input type="text" ng-model="newCity" >
+    <button ng-click="addCity()" class="btn btn-primary" >Add City</button>
+    <ul>
+        <li ng-repeat="item in cities" >{{item}}&nbsp;&nbsp;<button class='btn-danger' ng-click='deleteCity(item)'> X </span></li>
+    </ul>
+</div>            
+    

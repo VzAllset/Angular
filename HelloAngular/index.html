@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="src/myapp.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    
+    <body ng-app="Hello App" ng-init="name='Ram Kumar'" >
+        Hello Angular !!!
+        
+        {{2+3}}
+        
+        Hello {{name}} !!
+        <input type="text"  ng-model="name" />
+        
+       <!-- <div id="bsAlert" class="alert-warning" ng-controller="Main" >
+            This is a test message.
+            
+            {{$parent.name}}
+            <input type="text" ng-change="onChange()"  ng-model="$parent.name" />
+            Total Length : {{length}}
+            
+            {{greetings}}
+        </div> 
+        
+        <div id="bsAlert2" class="alert-info" ng-controller="Main" >
+            This is a second message.    
+        </div> -->
+        
+        <div ng-controller="dataController">
+            <ul>
+                <li ng-repeat="item in items" ng-click="removeItem()" >{{item}}</li>
+            </ul>
+            <label>New Item: </label> <input type="text" ng-model="currentItem" > 
+            <button class="btn-success" ng-click="addItem()"> Add This </button>
+            
+            <table class="table table-hover">   
+                <tr>
+                    <th ng-click="onSelect('serial')"> Serial No.</th>
+                    <th ng-click="onSelect('name')"> Name</th>
+                    <th ng-click="onSelect('age')"> Age </th>
+                    <th ng-click="onSelect('salary')"> Salary</th>
+                </tr>
+                <tr ng-repeat="person in people | orderBy : sortField " >
+                    <td>{{person.serial}}</td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.salary | currency :'र'}}</td>
+                </tr>
+            
+            </table>
+        </div>
+    </body>
+</html>

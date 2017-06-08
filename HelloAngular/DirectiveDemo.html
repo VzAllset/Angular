@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="angular-resource.min.js" ></script>
+        <script src="directive-demo.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    
+    <body ng-app="DirectiveDemo" >
+        
+        <div my-dir class="jumbotron" current="cities" ng-controller="rootController" >
+            This is text alreay present. <br>
+            
+            <ul>
+                <li ng-repeat="item in currentItems" >{{item}}</li>
+            </ul>
+        </div>
+        
+        <div ng-controller="rootController" >
+            <ul>
+                <li ng-repeat="item in cities" >{{item}}</li>
+            </ul>
+            <input type="text" ng-model="newCity" >
+            <button ng-click="addCity()" class="btn btn-primary" >Add City</button>
+            <scope-defined x="Ram" y="cities" ></scope-defined> 
+        </div>
+    </body>
+</html>

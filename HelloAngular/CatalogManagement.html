@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="angular-resource.min.js" ></script>
+        <script src="angular-route.min.js"></script>
+        <script src="catalog-manager.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    
+    <body ng-app="catalogManager" >
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Catalog Manager</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li id="HomeMenu" class='active'><a href="#!home">Home</a></li>
+          <li id="ViewMenu" ><a href="#!view">View Catalog</a></li>
+          <li id="EditMenu" ><a href="#!admin">Edit Catalog</a></li>
+        </ul>
+      </div>
+    </nav>
+                <div class="ng-view"></div>
+
+    </body>
+    
+</html>

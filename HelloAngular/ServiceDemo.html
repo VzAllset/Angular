@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="angular-resource.min.js" ></script>
+        <script src="src/servicedemo.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    
+    <body ng-app="ServiceDemo" >
+        <!--<div class="alert-info" ng-controller="NewPersonController" >
+            <table >
+                <tr> 
+                    <td>Serial Number: </td>
+                    <td><input type="text" ng-required ng-model="serial"> </td>
+                </tr>
+                <tr> 
+                    <td>Name: </td>
+                    <td><input type="text" ng-required  ng-model="name"> </td>
+                </tr>
+                <tr> 
+                    <td>Age: </td>
+                    <td><input type="text" ng-model="age"> </td>
+                </tr>
+                <tr> 
+                    <td>Salary </td>
+                    <td><input type="text" ng-model="salary"> </td>
+                </tr>
+                <tr> 
+                    <td> </td>
+                    <td> <button class="btn btn-primary" ng-click="addPerson()">Add Person</button> </td>
+                </tr>
+            </table>
+        </div>-->
+        <div class="alert-info" ng-controller="NewProductController" >
+            <table >
+                <tr> 
+                    <td>Product ID: </td>
+                    <td><input type="text" ng-model="id"> </td>
+                </tr>
+                <tr> 
+                    <td>Product Name: </td>
+                    <td><input type="text"  ng-model="name"> </td>
+                </tr>
+                <tr> 
+                    <td>Product Type: </td>
+                    <td><input type="text" ng-model="type"> </td>
+                </tr>
+                <tr> 
+                    <td>Price: </td>
+                    <td><input type="text" ng-model="price"> </td>
+                </tr>
+                <tr> 
+                    <td> </td>
+                    <td> <button class="btn btn-primary" ng-click="addProduct()">Add Product</button> </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <!--<div ng-controller="PeopleListController">
+            
+            <table class="table table-hover">   
+                <tr>
+                    <th ng-click="onSelect('serial')"> Serial No.</th>
+                    <th ng-click="onSelect('name')"> Name</th>
+                    <th ng-click="onSelect('age')"> Age </th>
+                    <th ng-click="onSelect('salary')"> Salary</th>
+                </tr>
+                <tr ng-repeat="person in people | orderBy : sortField "> | filterByName:'ram' " > 
+                    <td>{{person.serial}}</td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.salary | applyTax | currency :'र'}}</td>
+                </tr>
+            
+            </table>
+        </div>-->
+        <div ng-controller="serviceController">
+            
+            <table class="table table-hover">   
+                <tr>
+                    <th ng-click="onSelect('ProductID')"> Product ID</th>
+                    <th ng-click="onSelect('ProductName')"> Product Name</th>
+                    <th ng-click="onSelect('ProductType')"> Type </th>
+                    <th ng-click="onSelect('Price')"> Price </th>
+                </tr>
+                <tr ng-repeat="product in products | orderBy : sortField "> <!--| filterByName:'ram' " > -->
+                    <td>{{product.ProductID}}</td>
+                    <td>{{product.ProductName}}</td>
+                    <td>{{product.ProductType}}</td>
+                    <td>{{product.Price | currency :'र'}}</td>
+                </tr>
+            
+            </table>
+        </div>
+        
+        <div id="factoryArea" ng-controller="factoryController" class="alert alert-success" >
+            <my-Template></my-Template>
+        
+        </div>
+    
+    </body>
+</html>

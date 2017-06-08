@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="ang1.js.txt"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body ng-app='todayapp'>
+        <form ng-controller="formController"> 
+      SNO:  <input type='text' ng-model='sno' /> <br>
+      Name:  <input type='text' ng-model='name' /> <br>
+      Age:  <input type='text' ng-model='age' /> <br>
+     Salary:  <input type='text' ng-model='salary' /> <br>
+            <button class="btn btn-danger" ng-click='addPerson()'> Add Person </button>
+        </form>
+        <table class="table table-hover" ng-controller="tableController"> 
+            <tr> 
+                 <th>SNO </th>
+                 <th> NAME</th>
+                 <th>AGE </th>
+                 <th>SALARY </th>
+            </tr>          
+              
+             <tr ng-repeat='temp in persons'> 
+                 <td> {{temp.sno}}</td>
+                <td> {{temp.name}}</td>
+                 <td> {{temp.age}}</td>                 
+                 <td> {{temp.salary}}</td>
+
+            </tr>
+        </table>
+    </body>
+</html>
