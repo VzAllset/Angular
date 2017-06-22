@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js" ></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/cognito/aws-cognito-sdk.min.js"></script>
+        <script src="js/cognito/amazon-cognito-identity.min.js"></script>
+        <script src="js/cognito/aws-sdk.js"></script>
+        <script src="js/dashboard.js"></script>
+<!--        <script src="js/cognito/cognito-helper.js"></script>-->
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/dashboard.css" rel="stylesheet">
+    </head>
+    
+    <body ng-app="ServiceDemo" >
+        <!--<div class="alert-info" ng-controller="NewPersonController" >
+            <table >
+                <tr> 
+                    <td>Serial Number: </td>
+                    <td><input type="text" ng-required ng-model="serial"> </td>
+                </tr>
+                <tr> 
+                    <td>Name: </td>
+                    <td><input type="text" ng-required  ng-model="name"> </td>
+                </tr>
+                <tr> 
+                    <td>Age: </td>
+                    <td><input type="text" ng-model="age"> </td>
+                </tr>
+                <tr> 
+                    <td>Salary </td>
+                    <td><input type="text" ng-model="salary"> </td>
+                </tr>
+                <tr> 
+                    <td> </td>
+                    <td> <button class="btn btn-primary" ng-click="addPerson()">Add Person</button> </td>
+                </tr>
+            </table>
+        </div>-->
+       
+        <!--<div ng-controller="PeopleListController">
+            
+            <table class="table table-hover">   
+                <tr>
+                    <th ng-click="onSelect('serial')"> Serial No.</th>
+                    <th ng-click="onSelect('name')"> Name</th>
+                    <th ng-click="onSelect('age')"> Age </th>
+                    <th ng-click="onSelect('salary')"> Salary</th>
+                </tr>
+                <tr ng-repeat="person in people | orderBy : sortField "> | filterByName:'ram' " > 
+                    <td>{{person.serial}}</td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.salary | applyTax | currency :'र'}}</td>
+                </tr>
+            
+            </table>
+        </div>-->
+        <div ng-controller="serviceController">
+            
+            <table class="table table-hover">   
+                <tr>
+                    <th ng-click="onSelect('event_name')"> Event Name</th>
+                    <th ng-click="onSelect('resource_id')"> Resource Id</th>
+                    <th ng-click="onSelect('ProductType')"> Event Time </th>
+                    <th ng-click="onSelect('Price')"> User Name </th>
+                    <th ng-click="onSelect('Price')"> Status </th>
+                </tr>
+                <tr ng-repeat="event in events | orderBy : sortField "> <!--| filterByName:'ram' " > -->
+                    <td>{{event.event_name}}</td>
+                    <td>{{event.resource_id}}</td>
+                    <td>{{event.event_time}}</td>
+                    <td>{{event.user_identity.username}}</td>
+                    <td>{{event.status}}</td>
+                </tr>
+            
+            </table>
+            
+             <div class="modal fade {{showModal ? 'in' : ''}}" style="display: {{showModal ? 'block' : 'none' }}" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="{{showModal ? 'false' : 'true' }}" >
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" ng-click="ok()" value="Login">
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
+        </div>
+        
+     
+        
+           
+    </body>
+</html>
